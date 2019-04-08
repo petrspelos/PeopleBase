@@ -30,6 +30,6 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <Button Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Background="#B2535353" Margin="0, 25">Add new person</Button>
+        <Button x:Name="NewPersonBtn" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Background="#B2535353" Margin="0, 25" Click="NewPersonBtn_Click">Add new person</Button>
     </Grid>
 </Page>

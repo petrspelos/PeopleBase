@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PeopleBase
 {
     /// <summary>
-    /// Interaction logic for PeopleListingPage.xaml
+    /// Interaction logic for NewPersonModal.xaml
     /// </summary>
-    public partial class PeopleListingPage : Page
+    public partial class NewPersonModal : Window
     {
-        public PeopleListingPage()
+        public NewPersonModal()
         {
             InitializeComponent();
-        }
-
-        private void NewPersonBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var popup = new NewPersonModal();
-            popup.ShowDialog();
         }
     }
 }
