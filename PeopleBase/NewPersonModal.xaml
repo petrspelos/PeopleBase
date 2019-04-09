@@ -20,29 +20,35 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" fw:PointerTracker.Enabled="True">
-            <Label Content="First name:" VerticalAlignment="Center" Margin="7, 20, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
-            <TextBox HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}"/>
-            <Label Content="Last name:" VerticalAlignment="Center" Margin="7, 5, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
-            <TextBox HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="First name:" VerticalAlignment="Center" Margin="7, 20, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
+                <Label x:Name="FirstNameValidationLabel" Content="A first name must be at least 2 characters long and cannot contain digits." VerticalAlignment="Center" Margin="7, 20, 0, 0" Foreground="Red" />
+            </StackPanel>
+            <TextBox x:Name="FirstNameInput" HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}" TextChanged="FirstNameInput_OnTextChanged" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Last name:" VerticalAlignment="Center" Margin="7, 5, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
+                <Label x:Name="LastNameValidationLabel" Content="A last name must be at least 2 characters long and cannot contain digits." VerticalAlignment="Center" Margin="7, 20, 0, 0" Foreground="Red" />
+            </StackPanel>
+            <TextBox x:Name="LastNameInput" HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}" TextChanged="LastNameInput_OnTextChanged"/>
             <Label Content="Email:" VerticalAlignment="Center" Margin="7, 5, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
-            <TextBox HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}"/>
+            <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Margin="5" Text="" Width="585" Style="{StaticResource TextBoxRevealStyle}"/>
             <Label Content="Gender:" VerticalAlignment="Center" Margin="7, 5, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
-            <ListBox SelectedIndex="0" Margin="10, 0">
+            <ListBox SelectedIndex="0" Margin="10, 0" x:Name="GenderSelection">
                 <ListBoxItem Content="Female"/>
                 <ListBoxItem Content="Male" />
                 <ListBoxItem Content="Other" />
             </ListBox>
             <Label Content="Date of birth:" VerticalAlignment="Center" Margin="7, 5, 0, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
-            <DatePicker Margin="10, 0" />
+            <DatePicker Margin="10, 0" FirstDayOfWeek="Monday" x:Name="DateOfBirthPicker"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" fw:PointerTracker.Enabled="True">
-            <Button Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 10">
+            <Button Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 10" x:Name="CancelBtn" Click="CancelBtn_Click">
                 <StackPanel Orientation="Horizontal">
                     <Label VerticalAlignment="Center" Content="Cancel"  Margin="15, 0, 15, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
                 </StackPanel>
             </Button>
-            <Button Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 10" Background="#8033A012">
+            <Button x:Name="ConfirmBtn" Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 10" Background="#8033A012" Click="ConfirmBtn_OnClick">
                 <StackPanel Orientation="Horizontal">
                     <Label VerticalAlignment="Center" Content="Create"  Margin="15, 0, 15, 0" Foreground="{DynamicResource SystemBaseHighColorBrush}" />
                 </StackPanel>

@@ -27,7 +27,8 @@ namespace PeopleBase
 
         private void LoadFromFileBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PeopleListingPage());
+            var personFormWindow = new PeopleListingPage();
+            NavigationService.Navigate(personFormWindow);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PeopleBase.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,14 @@ namespace PeopleBase
         {
             var popup = new NewPersonModal();
             popup.ShowDialog();
+            if(!popup.form.IsFilled)
+            {
+                MessageBox.Show("Form wasn't filled.");
+            }
+            else
+            {
+                MessageBox.Show("Form was filled.");
+            }
         }
     }
 }

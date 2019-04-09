@@ -70,6 +70,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Entities\Gender.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PersonForm.cs" />
     <Compile Include="LoadDataPage.xaml.cs">
       <DependentUpon>LoadDataPage.xaml</DependentUpon>
     </Compile>
