@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Margin="20, 20, 20, 0">
-            <Button Background="Transparent" Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 0">
+            <Button x:Name="SaveFileBtn" Background="Transparent" Style="{StaticResource ButtonRevealStyle}" Margin="0, 0, 10, 0" Click="SaveFileBtn_OnClick">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Resources/fax-icon.png" Margin="10"/>
                     <Label VerticalAlignment="Center" Content="Save" Foreground="{DynamicResource SystemBaseHighColorBrush}" Margin="0, 0, 15, 0" />
@@ -31,5 +31,6 @@
             </Button>
         </StackPanel>
         <Button x:Name="NewPersonBtn" Grid.Row="1" Style="{StaticResource ButtonRevealStyle}" Foreground="{DynamicResource SystemBaseHighColorBrush}" Background="#B2535353" Margin="0, 25" Click="NewPersonBtn_Click">Add new person</Button>
+        <RichTextBox x:Name="XmlOutput" Grid.Row="2" Background="Transparent" Foreground="{DynamicResource SystemBaseHighColorBrush}"></RichTextBox>
     </Grid>
 </Page>
